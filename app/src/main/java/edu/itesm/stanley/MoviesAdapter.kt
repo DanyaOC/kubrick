@@ -33,7 +33,8 @@ class MoviesAdapter(private val movies : List<Movie>)
         holder.anio.text = movie.anio
         holder.plot.text = movie.plot
         holder.itemView.setOnClickListener {
-            holder.itemView.findNavController().navigate(R.id. action_moviesFragment_to_movieFragment)
+            val action = MoviesFragmentDirections.actionMoviesFragmentToMovieFragment(movie)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
